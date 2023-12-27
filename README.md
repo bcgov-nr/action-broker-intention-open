@@ -14,12 +14,15 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
 ```yaml
 - uses: bcgov-nr/action-broker-intention-close@v1
   with:
-    # The intention to close.
-    intention_token: ''
+    # The broker account JWT to use
+    broker_jwt: ''
+
+    # TThe path to the intention to send to the broker
+    intention_path: ''
 
     # The broker url.
     # Default: 'https://nr-broker.apps.silver.devops.gov.bc.ca'
-    persist-credentials: ''
+    broker_url: ''
 ```
 <!-- end usage -->
 

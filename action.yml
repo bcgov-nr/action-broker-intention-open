@@ -1,0 +1,31 @@
+name: NR Broker intention open action
+description: Opens an intention
+branding:
+  icon: package
+  color: blue
+
+inputs:
+  broker_jwt:
+    description: The broker account JWT to use
+    required: true
+  intention_path:
+    description: The path to the intention to send to the broker
+    default: intention.json
+  broker_url:
+    default: https://nr-broker.apps.silver.devops.gov.bc.ca
+    description: The broker url.
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+    - id: broker-intention-open
+      shell: bash
+      env:
+        BROKER_JWT: ${{ inputs.broker_jwt }}
+        BROKER_URL: ${{ inputs.broker_url }}
+        INTENTION_PATH: {{ inputs.intention_path }}
+      run: intention-open.sh
+
+

@@ -3,8 +3,7 @@
 echo "===> Intention close"
 
 # Use saved intention token to close intention
-RESPONSE=$(curl -s -X POST $BROKER_URL/v1/intention/open
-    -H 'Authorization: Bearer '"$BROKER_JWT"'' -d @$INTENTION_PATH)
+RESPONSE=$(curl -s -X POST $BROKER_URL/v1/intention/open -H 'Authorization: Bearer '"$BROKER_JWT"'' -d @$INTENTION_PATH)
 
 if [ "$(echo $RESPONSE | jq '.error')" != "null" ]; then
     echo "Exit: Error detected"

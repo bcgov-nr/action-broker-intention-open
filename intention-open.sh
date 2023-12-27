@@ -36,3 +36,5 @@ do
   echo "::add-mask::$TOKEN"
   echo ''"$ID_ENV"'='"$TOKEN"'' >> $GITHUB_ENV
 done
+
+echo "Success"

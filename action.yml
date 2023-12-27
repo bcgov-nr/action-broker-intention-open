@@ -25,7 +25,5 @@ runs:
       env:
         BROKER_JWT: ${{ inputs.broker_jwt }}
         BROKER_URL: ${{ inputs.broker_url }}
-        INTENTION_PATH: {{ inputs.intention_path }}
+        INTENTION_PATH: ${{ inputs.intention_path }}
       run: intention-open.sh
-
-

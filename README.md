@@ -1,8 +1,8 @@
 # Broker Intention Open V1
 
-This action opens an intention, so the service can access the broker.
+This action opens an intention, so a service can access the Broker APIs. The ability to do the actions in the intention will be checked against business rules.
 
-If you encounter an error, ensure that the Broker URL is correct and your token is valid.
+If you encounter an error, ensure that the Broker URL is correct, and your token is valid.
 
 # Broker Documention
 
@@ -40,7 +40,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
 
 # Output
 
-This action outputs the intention and action tokens as environment variables.
+This action outputs the intention and action tokens as environment variables. The trace ids (for viewing in observability) will be output in the console.
 
 ### INTENTION_TOKEN
 
@@ -48,7 +48,7 @@ This is the token used to close the intention with the [action-broker-intention-
 
 ### ACTION_TOKEN_\<ID\>
 
-Each action within the intention has an 'id'. The capitalized 'id' property is appended to 'ACTION_TOKEN_' and set in the environment. This token can be used to start and end an action, retrieve secrets and provision application access.
+Each action within the intention has an 'id'. The capitalized 'id' property is appended to 'ACTION_TOKEN_' and set in the environment. This token can be used to start and end an action, retrieve secrets, and provision application access.
 
 # License
 

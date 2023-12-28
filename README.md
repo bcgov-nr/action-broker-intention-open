@@ -17,7 +17,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
     # The broker account JWT to use
     broker_jwt: ''
 
-    # TThe path to the intention to send to the broker
+    # The path to the intention to send to the broker
     intention_path: ''
 
     # The broker url.

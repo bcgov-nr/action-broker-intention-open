@@ -4,8 +4,22 @@ echo "===> Intention open"
 
 cat $INTENTION_PATH
 
+URL_PARAMS=""
+if [ "$QUICKSTART" = true ]; then
+  URL_PARAMS="?quickstart=true"
+fi
+
+if [ "$TTL" = true ]; then
+  if [ "$QUICKSTART" = true ]; then
+    URL_PARAMS="$URL_PARAMS&ttl=$TTL"
+  else
+    URL_PARAMS="?ttl=$TTL"
+  fi
+fi
+
+echo "Post: $BROKER_URL/v1/intention/open$URL_PARAMS"
 # Use saved intention token to close intention
-RESPONSE=$(curl -s -X POST $BROKER_URL/v1/intention/open \
+RESPONSE=$(curl -s -X POST $BROKER_URL/v1/intention/open$URL_PARAMS \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer '"$BROKER_JWT"'' \
     -d @$INTENTION_PATH \

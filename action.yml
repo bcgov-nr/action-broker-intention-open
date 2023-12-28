@@ -14,7 +14,18 @@ inputs:
   broker_url:
     default: https://nr-broker.apps.silver.devops.gov.bc.ca
     description: The broker url.
-
+  quickstart:
+    default: false
+    description: >
+      Send quickstart parameter. Valid for intentions with a single action.
+      If true, the action will be started automatically.
+  ttl:
+    default: false
+    description: >
+      Time to live (ttl) of the intention. The intention must be closed (and
+      all actions should finish) before the TTL expires. Set to explicitly send
+      the requested TTL (in seconds). If TTL is not set (and not sent), the
+      Broker's default is used.
 runs:
   using: "composite"
   steps:
@@ -26,4 +37,6 @@ runs:
         BROKER_JWT: ${{ inputs.broker_jwt }}
         BROKER_URL: ${{ inputs.broker_url }}
         INTENTION_PATH: ${{ inputs.intention_path }}
+        QUICKSTART: ${{ inputs.quickstart }}
+        TTL: ${{ inputs.ttl }}
       run: intention-open.sh

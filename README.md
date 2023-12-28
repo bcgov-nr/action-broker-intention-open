@@ -23,6 +23,18 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
     # The broker url.
     # Default: 'https://nr-broker.apps.silver.devops.gov.bc.ca'
     broker_url: ''
+
+    # Send quickstart parameter. Valid for intentions with a single action.
+    # If true, the action will be started automatically.
+    # Default: false
+    quickstart: ''
+
+    # Time to live (ttl) of the intention. The intention must be closed (and
+    # all actions should finish) before the TTL expires. Set to explicitly send
+    # the requested TTL (in seconds). If TTL is not set (and not sent), the
+    # Broker's default is used.
+    # Default: Use Broker default
+    ttl: ''
 ```
 <!-- end usage -->
 

@@ -4,12 +4,13 @@ echo "===> Intention open"
 
 cat $INTENTION_PATH
 
+INTEGER_TEST='^[0-9]+$'
 URL_PARAMS=""
 if [ "$QUICKSTART" = true ]; then
   URL_PARAMS="?quickstart=true"
 fi
 
-if [ "$TTL" = true ]; then
+if [[ $TTL =~ $INTEGER_TEST ]]; then
   if [ "$QUICKSTART" = true ]; then
     URL_PARAMS="$URL_PARAMS&ttl=$TTL"
   else

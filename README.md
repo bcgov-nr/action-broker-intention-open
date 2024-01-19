@@ -12,7 +12,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
 
 <!-- start usage -->
 ```yaml
-- uses: bcgov-nr/action-broker-intention-close@v1
+- uses: bcgov-nr/action-broker-intention-open@v1
   with:
     # The broker account JWT to use
     broker_jwt: ''

@@ -46,13 +46,13 @@ This action outputs the intention/action tokens and intention ID as environment 
 
 This is the token used to close the intention with the [action-broker-intention-close](https://github.com/bcgov-nr/action-broker-intention-close) action.
 
+### INTENTION_ID
+
+This is used to uniquely identify an intention. It can be used to view the intention in observability and refer to this intention in follow-on intentions.
+
 ### ACTION_TOKEN_\<ID\>
 
 Each action within the intention has an 'id'. The capitalized 'id' property is appended to 'ACTION_TOKEN_' and set in the environment. This token can be used to start and end an action, retrieve secrets, and provision application access.
-
-### INTENTION_ID
-
-This is the ID of the intention, which is needed by the deployment job.
 
 # License
 

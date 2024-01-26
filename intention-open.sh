@@ -32,11 +32,12 @@ if [ "$(echo $RESPONSE | jq '.error')" != "null" ]; then
     exit 1
 fi
 
-echo "===> Save intention token to env"
+echo "===> Save intention token and intention ID to env"
 # Save intention token for later
 INTENTION_TOKEN=$(echo $RESPONSE | jq -r '.token')
 echo "::add-mask::$INTENTION_TOKEN"
 echo "INTENTION_TOKEN=$INTENTION_TOKEN" >> $GITHUB_ENV
+echo "INTENTION_ID=$(echo ${RESPONSE} | jq -r '.id')" >> $GITHUB_ENV
 
 echo "===> Save action tokens to env"
 # Save action tokens for later

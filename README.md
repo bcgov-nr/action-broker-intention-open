@@ -40,7 +40,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
 
 # Output
 
-This action outputs the intention and action tokens as environment variables. The trace ids (for viewing in observability) will be output in the console.
+This action outputs the intention/action tokens and intention ID as environment variables. The trace ids (for viewing in observability) will be output in the console.
 
 ### INTENTION_TOKEN
 
@@ -49,6 +49,10 @@ This is the token used to close the intention with the [action-broker-intention-
 ### ACTION_TOKEN_\<ID\>
 
 Each action within the intention has an 'id'. The capitalized 'id' property is appended to 'ACTION_TOKEN_' and set in the environment. This token can be used to start and end an action, retrieve secrets, and provision application access.
+
+### INTENTION_ID
+
+This is the ID of the intention, which is needed by the deployment job.
 
 # License
 

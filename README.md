@@ -1,4 +1,4 @@
-# Broker Intention Open V1
+# Broker Intention Open V2
 
 This action opens an intention, so a service can access the Broker APIs. The ability to do the actions in the intention will be checked against business rules.
 
@@ -12,7 +12,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
 
 <!-- start usage -->
 ```yaml
-- uses: bcgov-nr/action-broker-intention-open@v1
+- uses: bcgov-nr/action-broker-intention-open@v2
   with:
     # The broker account JWT to use
     broker_jwt: ''

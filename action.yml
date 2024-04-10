@@ -12,7 +12,7 @@ inputs:
     description: The path to the intention to send to the broker
     default: intention.json
   broker_url:
-    default: https://nr-broker.apps.silver.devops.gov.bc.ca
+    default: https://broker.io.nrs.gov.bc.ca
     description: The broker url.
   quickstart:
     default: false

@@ -21,7 +21,7 @@ Please refer to the [NR Broker Repository](https://github.com/bcgov-nr/nr-broker
     intention_path: ''
 
     # The broker url.
-    # Default: 'https://nr-broker.apps.silver.devops.gov.bc.ca'
+    # Default: 'https://broker.io.nrs.gov.bc.ca'
     broker_url: ''
 
     # Send quickstart parameter. Valid for intentions with a single action.
